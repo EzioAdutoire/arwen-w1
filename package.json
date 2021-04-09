@@ -1,0 +1,16 @@
+{
+  "name": "arwen",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "test": "node bot.js"
+  },
+  "author": "arwen",
+  "license": "ISC",
+  "dependencies": {
+    "ffmpeg": "^0.0.4",
+    "node-opus": "^0.3.3",
+    "opusscript": "^0.0.8"
+  }
+}
