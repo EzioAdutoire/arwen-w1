@@ -29,15 +29,10 @@ require('./util/eventLoader.js')(client);
 //READY.JS SON
 
 //KOMUT ALGILAYICI
-client.on('ready', () => {
-    client.channels.cache.get('825327697927864360').join().then(rifleman => {
-      rifleman.voice.setSelfDeaf(true);
-      client.on('voiceStateUpdate', (youth, anasia) => {
-        if (!youth.channel && anasia.channel && anasia.channel.id == '825327697927864360') {
-            setTimeout(() => rifleman.play('./test.mp3'), 3000); // sesi kanala girişten 3 saniye sonra çalar
-        };
-      });
-    });
+client.on("ready", async () => {
+  console.log("Bot Başarıyla Ses Kanalına Bağlandı")
+  let botVoiceChannel = client.channels.cache.get("825327697927864360");
+  if (botVoiceChannel) botVoiceChannel.join().catch(err => console.error("Bot ses kanalına bağlanırken bir hata oluştu!"));
 });
 
 client.commands = new Discord.Collection();
